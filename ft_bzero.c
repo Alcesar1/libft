@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alex GEOFFROY <ageoffro@student.42lausanne +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 14:52:06 by Alex GEOFFROY     #+#    #+#             */
-/*   Updated: 2025/10/06 15:16:21 by Alex GEOFFROY    ###   ########.fr       */
+/*   Created: 2025/10/06 14:52:06 by Alex GEOFFR       #+#    #+#             */
+/*   Updated: 2025/10/08 14:07:04 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, '0', n);
+	ft_memset(s, 0, n);
 }
 /*
 int	main()

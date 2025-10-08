@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alex GEOFFROY <ageoffro@student.42lausanne +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 14:21:34 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/07 17:13:26 by Alex GEOFFROY    ###   ########.fr       */
+/*   Updated: 2025/10/08 12:07:35 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s != 0)
 	{
 		if (*s == (char)c)
-			return (char*)s;
+			return ((char *)s);
 		s++;
 	}
-	return(0);
+	return (0);
 }
 /*
 int	main()

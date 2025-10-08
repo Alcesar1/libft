@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:31:34 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/03 12:05:52 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2025/10/08 16:21:27 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	j;
-	int	f;
-
-	f = 0;
-	j = size - ft_strlen(dst) - 1;
-	i = ft_strlen(dst);
-	while (i != j)
-	{
-		dst[i] = src[f];
-		i++;
-		f++;
-	}
-	dst[i] = '\0';
-	return(*dst);
+	size_t	lendst;
+	size_t	lensrc;
+	
+	lendst = ft_strlen(dst);
+	lensrc = ft_strlen(src);
+	if (size <= lendst)
+		return (size + lensrc);
+	if (lensrc < size - lendst)
+		ft_memcpy(dst + lendst, src, lensrc + 1);
+	else
+		{
+		ft_memcpy(dst + lendst, src, size - lendst - 1);
+		dst[size - 1] = '\0';
+		}
+	return(lensrc + lendst);
 }
 /*
 int main(void)

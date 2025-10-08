@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:09:42 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/03 16:23:56 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2025/10/08 12:08:26 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[i] > 0)
 	{
 		if (s[i] == (char)c)
-			return (char*)s;
+			return ((char *)s);
 		i--;
 	}
 	return (0);
 }
-
+/*
 int	main()
 {
 	const char *s = "Capislesresta";
@@ -34,4 +34,4 @@ int	main()
 	c = 's';
 	printf("%s", ft_strrchr(s, c));
 	return (0);
-}
+}*/

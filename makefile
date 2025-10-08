@@ -1,38 +1,31 @@
-# Config
-NAME 	= libft.a #nom de la librairie
-CC 		= gcc #compilateur
-CFLAGS 	= -g -Wall -Werror -Wextra #flags / options de compilations
-AR 		= ar rcs
-RM		= rm -f
+NAME = libft.a
 
-#Files
-OBJ_DIR = obj
-SRC_DIR = src
+PART1 = ft_isalpha.c ft_memcpy.c ft_isdigit.c ft_isalnum.c \
+         ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c \
+        ft_bzero.c ft_strlcpy.c ft_strlcat.c \
+         ft_toupper.c ft_tolower.c ft_strchr.c
 
-#fichiers sources
-SRC =  	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c	\
-		ft_strlen.c ft_memset.c ft_bzero.c ft_strlcpy.c ft_strlcat.c 		\
-		ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c
+SRCS = ${PART1}
+OBJS = ${SRCS:.c=.o}
+CC = cc
+RM        = rm -f
+CFLAGS = -Wall -Wextra -Werror -g
+INCLUDE = -I .
 
-OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o)) #fichiers objets
+all:    ${NAME}
 
-#rules
-all: $(NAME)
-#creation de la lib
-$(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
 
-#compilation: .c ->obj/.o
-$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+${NAME}: ${OBJS}
+	ar rcs ${NAME} ${OBJS}
+
+%.o: %.c
+	${CC} ${CFLAGS} ${INCLUDE} -c $< -o ${<:.c=.o}
 
 clean:
-	$(RM) -r $(OBJ_DIR)
+	 ${RM} ${OBJS}
+fclean:    clean
+	${RM} ${NAME}
 
-fclean: clean
-	$(RM) $(NAME)
+re:        fclean all
 
-re: fclean all
 .PHONY: all clean fclean re

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 13:39:16 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/03 14:04:54 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2025/10/08 15:40:35 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int	ft_tolower(int c)
 		c += 32;
 		return (c);
 	}
-	else
-		return (0);
+	return (c);
 }
 /*
 int	main()
