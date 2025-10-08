@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ageoffro <ageoffro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Alex GEOFFROY <ageoffro@student.42lausanne +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 14:13:11 by ageoffro          #+#    #+#             */
-/*   Updated: 2025/10/02 15:07:30 by ageoffro         ###   ########.fr       */
+/*   Updated: 2025/10/07 16:42:25 by Alex GEOFFROY    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 size_t ft_strlcpy(char *dest, const char *src, size_t size)
 {
-    int i;
+    size_t i;
 
+	i = 0;
     while (i <= size-1)
     {
         dest[i] = src[i];

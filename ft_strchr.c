@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: Alex GEOFFROY <ageoffro@student.42lausanne +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 14:21:34 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/07 14:04:04 by alex             ###   ########.fr       */
+/*   Updated: 2025/10/07 17:13:26 by Alex GEOFFROY    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,3 @@ int	main()
 	printf("%s", ft_strchr(s, c));
 	return(0);
 }*/
-
-/*comment*/

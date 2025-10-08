@@ -6,7 +6,7 @@
 /*   By: Alex GEOFFROY <ageoffro@student.42lausanne +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:17:20 by Alex GEOFFROY     #+#    #+#             */
-/*   Updated: 2025/10/06 16:37:32 by Alex GEOFFROY    ###   ########.fr       */
+/*   Updated: 2025/10/07 17:13:32 by Alex GEOFFROY    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,4 @@ int	main()
 	ft_memcpy(s1, s2, i);
 	printf("%s", s1);
 	return (0);
-	
 }*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ageoffro <ageoffro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Alex GEOFFROY <ageoffro@student.42lausanne +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 13:11:36 by ageoffro          #+#    #+#             */
-/*   Updated: 2025/10/02 13:50:10 by ageoffro         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:59:45 by Alex GEOFFROY    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if (ft_digit(c) || ft_isalpha(c))
+	if (ft_isdigit(c) || ft_isalpha(c))
 		return (1);
 	else
 		return (0);
