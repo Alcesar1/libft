@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alex GEOFFROY <ageoffro@student.42lausanne +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 09:00:02 by Alex GEOFFROY     #+#    #+#             */
-/*   Updated: 2025/10/06 11:05:00 by Alex GEOFFROY    ###   ########.fr       */
+/*   Created: 2025/10/06 09:00:02 by Alex GEOFFR       #+#    #+#             */
+/*   Updated: 2025/10/09 10:29:18 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (s1[i] != 0 && i != n)
 	{
 		if (s1[i] != s2[i])
-			return (s1[i]-s2[i]);
-	i++;
+			return (s1[i] - s2[i]);
+		i++;
 	}
 	return (0);
 }

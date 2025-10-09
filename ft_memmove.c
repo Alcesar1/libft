@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alex GEOFFROY <ageoffro@student.42lausanne +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 16:39:07 by Alex GEOFFROY     #+#    #+#             */
-/*   Updated: 2025/10/06 17:25:42 by Alex GEOFFROY    ###   ########.fr       */
+/*   Created: 2025/10/06 16:39:07 by Alex GEOFFR       #+#    #+#             */
+/*   Updated: 2025/10/09 11:59:19 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return(dest);
 	}
 }
-
+/*
 int	main()
 {
 	char src[] = "capi";
@@ -50,4 +50,4 @@ int	main()
 	ft_memmove(dst, src, n);
 	printf("%s", dst);
 	return (0);
-}
+}*/

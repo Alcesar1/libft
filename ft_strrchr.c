@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:09:42 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/08 12:08:26 by alex             ###   ########.fr       */
+/*   Updated: 2025/10/09 14:49:16 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	char	*last;
 
-	i = ft_strlen(s);
-	while (s[i] > 0)
+	last = NULL;
+	while (*s)
 	{
-		if (s[i] == (char)c)
-			return ((char *)s);
-		i--;
+		if (*s == (char)c)
+			last = (char *)s;
+		s++;
 	}
-	return (0);
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (last);
 }
 /*
 int	main()
 {
-	const char *s = "Capislesresta";
+	const char *s = "Capis\0lesresta";
 	int	c;
 
-	c = 's';
+	c = '\0';
 	printf("%s", ft_strrchr(s, c));
 	return (0);
 }*/

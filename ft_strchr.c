@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 14:21:34 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/08 12:07:35 by alex             ###   ########.fr       */
+/*   Updated: 2025/10/09 11:23:25 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != 0)
+	while (*s != (char)c)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
+		if (*s == '\0')
+			return (0);
 		s++;
 	}
-	return (0);
+	return ((char *)s);
 }
 /*
 int	main()
