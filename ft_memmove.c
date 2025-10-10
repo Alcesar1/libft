@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:39:07 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/09 17:09:57 by alex             ###   ########.fr       */
+/*   Updated: 2025/10/10 11:08:43 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,25 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t = lendest;
-	size_t = lensrc;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	lendest = ft_strlen(dest);
-	lensrc = ft_strlen(src);
-	
-	if (lendest < lensrc)
+	d = (unsigned char *) dest;
+	s = (const unsigned char *) src;
+	if (d == s || n == 0)
+		return (dest);
+	if (d < s)
 	{
-		ft_memcpy(ptrd, ptrs, n);
-		return(dest);
+		ft_memcpy(d, s, n);
+		return (dest);
 	}
-	else (lendest > lensrc)
+	else
 	{
-		while (dest + lendest > 0)
+		while (n--)
 		{
-			*dest = *src;
-			lendest--;
-			lensc--;
+			d[n] = s[n];
 		}
-		return(dest);
+		return (dest);
 	}
 }
 /*
