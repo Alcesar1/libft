@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:39:07 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/09 11:59:19 by alex             ###   ########.fr       */
+/*   Updated: 2025/10/09 17:09:57 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *ptrd;
-	unsigned char *ptrs;
 	size_t = lendest;
 	size_t = lensrc;
-	
-	ptrd = (unsigned char *)dest;
-	ptrs = (unsigned char *)src;
+
 	lendest = ft_strlen(dest);
 	lensrc = ft_strlen(src);
 	
@@ -29,11 +25,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(ptrd, ptrs, n);
 		return(dest);
 	}
-	else if (lendest > lensrc)
+	else (lendest > lensrc)
 	{
-		while (ptrd[lendest] > 0)
+		while (dest + lendest > 0)
 		{
-			ptrd[lendest] = ptrs[lensrc];
+			*dest = *src;
 			lendest--;
 			lensc--;
 		}
