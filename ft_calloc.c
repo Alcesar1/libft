@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 12:59:07 by alex              #+#    #+#             */
-/*   Updated: 2025/10/13 14:56:14 by Alex GEOFFR      ###   ########.fr       */
+/*   Created: 2025/10/13 13:41:53 by Alex GEOFFR       #+#    #+#             */
+/*   Updated: 2025/10/13 14:58:02 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	i;
-	int	result;
-	int	neg;
+	unsigned char	*array;
 
-	neg = 1;
-	i = 0;
-	result = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '-')
-	{
-		neg = -1;
-		i++;
-	}
-	else if (nptr[i] == '+')
-		i++;
-	if (!(nptr[i] >= '0' && nptr[i] <= '9'))
+	if (size * nmemb == 0)
+		return (malloc(0));
+	if (nmemb > SIZE_MAX / size)
+		return (NULL);
+	array = malloc(nmemb * size);
+	if (!array)
 		return (0);
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result = result * 10 + nptr[i] - 48;
-		i++;
-	}
-	return (result * neg);
+	ft_bzero(array, nmemb * size);
+	return (array);
 }

@@ -1,41 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 12:59:07 by alex              #+#    #+#             */
-/*   Updated: 2025/10/13 14:56:14 by Alex GEOFFR      ###   ########.fr       */
+/*   Created: 2025/10/13 15:04:03 by Alex GEOFFR       #+#    #+#             */
+/*   Updated: 2025/10/13 15:04:55 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strdup(const char *s)
 {
-	int	i;
-	int	result;
-	int	neg;
-
-	neg = 1;
-	i = 0;
-	result = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '-')
-	{
-		neg = -1;
-		i++;
-	}
-	else if (nptr[i] == '+')
-		i++;
-	if (!(nptr[i] >= '0' && nptr[i] <= '9'))
-		return (0);
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result = result * 10 + nptr[i] - 48;
-		i++;
-	}
-	return (result * neg);
+	
 }
