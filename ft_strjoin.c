@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 15:04:03 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/15 10:06:37 by Alex GEOFFR      ###   ########.fr       */
+/*   Created: 2025/10/15 14:44:56 by Alex GEOFFR       #+#    #+#             */
+/*   Updated: 2025/10/15 15:20:33 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <errno.h>
 
-char	*ft_strdup(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*ptr;
-	size_t	len;
+	char	*str;
+	size_t	ls1;
+	size_t	ls2;
+	size_t	lenstr;
 
-	len = ft_strlen(s) + 1;
-	ptr = ft_calloc(len, sizeof(char));
-	if (!ptr)
+	ls1 = ft_strlen(s1);
+	ls2 = ft_strlen(s2);
+	lenstr = ls1 + ls2 +1;
+	if (s1 == 0)
+		return ((char *)s2);
+	if (s2 == 0)
+		return ((char *)s1);
+	str = ft_calloc(lenstr, sizeof(char));
+	if (!str)
 	{
 		errno = ENOMEM;
 		return (NULL);
 	}
-	ft_strlcpy(ptr, s, len);
-	return (ptr);
+	ft_strlcpy(str, s1, ls1 + 1);
+	ft_strlcat(str, s2, lenstr);
+	return (str);
 }
-
-/*The strdup() function returns a pointer to a new string which 
-is a duplicate of the string s.  Memory 
-for the new string is obtained with malloc(3), and can be freed with 
-free(3).*/

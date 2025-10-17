@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 15:04:03 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2025/10/15 10:06:37 by Alex GEOFFR      ###   ########.fr       */
+/*   Created: 2025/10/15 10:10:35 by Alex GEOFFR       #+#    #+#             */
+/*   Updated: 2025/10/15 14:44:28 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <errno.h>
 
-char	*ft_strdup(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ptr;
-	size_t	len;
+	char	*str;
+	size_t	slen;
 
-	len = ft_strlen(s) + 1;
-	ptr = ft_calloc(len, sizeof(char));
-	if (!ptr)
+	slen = ft_strlen(s);
+	if (start >= slen)
+	{
+		str = ft_calloc(1, sizeof(char));
+		if (!str)
+		{
+			errno = ENOMEM;
+			return (NULL);
+		}
+		return (str);
+	}
+	if (len > (slen - start))
+		len = (slen - start);
+	str = ft_calloc(len +1, sizeof(char));
+	if (!str)
 	{
 		errno = ENOMEM;
 		return (NULL);
 	}
-	ft_strlcpy(ptr, s, len);
-	return (ptr);
+	ft_strlcpy(str, s + start, len +1);
+	return (str);
 }
-
-/*The strdup() function returns a pointer to a new string which 
-is a duplicate of the string s.  Memory 
-for the new string is obtained with malloc(3), and can be freed with 
-free(3).*/
